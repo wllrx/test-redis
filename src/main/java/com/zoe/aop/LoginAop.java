@@ -37,7 +37,11 @@ public class LoginAop {
             throw new HttpException("当前未登录!");
         }
     }
-    @After("cut(),execution(*com.zoe.aop.TestController.*.*(..))")
+
+    /**
+     *
+     */
+    @After("cut(),execution(*com.zoe.aop.TestController.test(..))")
     public void after(){
         log.info("========================= 方法执行完毕,开始打印=========================");
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

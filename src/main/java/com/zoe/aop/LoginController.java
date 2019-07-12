@@ -4,15 +4,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author zoe
- **/
 @RestController
-public class TestController {
+public class LoginController {
 
-    @GetMapping("/testLogin")
+    @GetMapping("/login")
     @Login
-    public ResponseEntity test(){
-        return ResponseEntity.ok("OK");
+    public ResponseEntity login(){
+        return ResponseEntity.ok("login success");
     }
 }

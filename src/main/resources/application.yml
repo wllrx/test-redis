@@ -1,0 +1,31 @@
+onesports:
+  cache:
+    cache-prefix: test
+    caffeine:
+      expire-after-write: 10000
+      maximum-size: 3
+    redis:
+      expire: 360
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/demo?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: postgres
+    password: postgres
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 在没有连接可用的情况下等待超时时间
+      connection-timeout: 30000
+      # 核心连接池最大大小
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 30000
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false

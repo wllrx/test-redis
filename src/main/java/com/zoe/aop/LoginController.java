@@ -9,7 +9,7 @@ public class LoginController {
 
     @GetMapping("/login")
     @Login
-    public ResponseEntity login(){
+    public ResponseEntity<String> login(){
         return ResponseEntity.ok("login success");
     }
 }

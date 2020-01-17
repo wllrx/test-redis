@@ -48,6 +48,6 @@ public class UserService {
 
     @CacheEvict(value = "user",key = "#id")
     public void deleteUser(Long id){
-        log.info("清除缓存.........");
+        log.info("清除缓存......... key值:{}", +id);
     }
 }
